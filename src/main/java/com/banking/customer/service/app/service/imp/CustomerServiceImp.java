@@ -28,32 +28,27 @@ public class CustomerServiceImp implements CustomerService {
 
 	@Override
 	public Flux<Customer> findByTributaryIdentifier(int tributaryIdentifier) {
-		// TODO Auto-generated method stub
-		return null;
+		return customerRepository.findByTributaryIdentifier(tributaryIdentifier);
 	}
 
 	@Override
 	public Mono<Customer> findById(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		return customerRepository.findById(id);
 	}
 
 	@Override
 	public Mono<Customer> findByPersonalIdentifier(int personalIdentifier) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public Mono<Customer> save(Customer customer) {
-		// TODO Auto-generated method stub
-		return null;
+		return customerRepository.save(customer);
 	}
 
 	@Override
 	public Mono<Void> delete(Customer customer) {
-		// TODO Auto-generated method stub
-		return null;
+		return customerRepository.delete(customer);
 	}
 
 }
