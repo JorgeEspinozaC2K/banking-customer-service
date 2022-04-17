@@ -22,16 +22,6 @@ public class CustomerServiceImp implements CustomerService {
 	}
 
 	@Override
-	public Flux<Customer> findByLegalCustomer(Boolean legalCustomer) {
-		return customerRepository.findByLegalCustomer(legalCustomer);
-	}
-
-	@Override
-	public Flux<Customer> findByTributaryIdentifier(int tributaryIdentifier) {
-		return customerRepository.findByTributaryIdentifier(tributaryIdentifier);
-	}
-
-	@Override
 	public Mono<Customer> findById(String id) {
 		return customerRepository.findById(id);
 	}

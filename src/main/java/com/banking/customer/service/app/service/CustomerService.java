@@ -11,8 +11,6 @@ public interface CustomerService {
 	//Todos los métodos que devuelven un tipo flux que conteniendo el mismo tipo de dato que la clase dominante.
 	
 	public Flux<Customer> findAll();
-	public Flux<Customer> findByLegalCustomer(Boolean legalCustomer);
-	public Flux<Customer> findByTributaryIdentifier(int tributaryIdentifier);
 	
 	
 	//All the methods that returns a mono type containing the same data type of the ruling class.
