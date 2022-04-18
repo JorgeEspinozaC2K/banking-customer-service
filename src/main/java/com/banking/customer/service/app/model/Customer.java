@@ -8,6 +8,8 @@ import javax.validation.constraints.NotEmpty;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -36,13 +38,16 @@ public class Customer {
 	//Customer's personal identification number
 	//Identificador personal del cliente
 	@NotEmpty
-	private int personalIdentifier;
+	private Integer personalIdentifier;
 	
 	//Email of customer
 	//Correo electrónico del cliente
 	@Email
 	@NotEmpty
 	private String email;
+	
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	private Date birthDate;
 	
 	//Date of creation of this customer
 	private Date createAt = new Date();

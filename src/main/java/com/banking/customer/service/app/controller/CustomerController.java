@@ -1,7 +1,11 @@
 package com.banking.customer.service.app.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,9 +13,10 @@ import com.banking.customer.service.app.model.Customer;
 import com.banking.customer.service.app.service.CustomerService;
 
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("api/v1/customers")
+@RequestMapping("api/v1/customer")
 public class CustomerController {
 	
 	@Autowired
@@ -20,6 +25,31 @@ public class CustomerController {
 	@GetMapping
 	public Flux<Customer> index(){
 		return customerService.findAll();
+	}
+	
+	@GetMapping("/{id}")
+	public Mono<Object> findById(@PathVariable String id){
+		return customerService.findById(id);
+	}
+	
+	@GetMapping("/pid/{id}")
+	public Mono<Object> findBypersonalIdentifier(@PathVariable Integer id){
+		return customerService.findByPersonalIdentifier(id);
+	}
+	
+	@GetMapping("/ipid/{id}")
+	public Mono<Object> findByIdOrpersonalIdentifier(@PathVariable Integer id){
+		return customerService.findByIdOrPersonalIdentifier(id.toString(),id);
+	}
+	
+	@PostMapping("/new")
+	public Mono<Object> newCustomer(@RequestBody Customer customer){
+		return customerService.save(customer);
+	}
+	
+	@DeleteMapping("/delete")
+	public Mono<Object> deleteCustomer(@RequestBody Customer customer){
+		return customerService.delete(customer);
 	}
 
 }

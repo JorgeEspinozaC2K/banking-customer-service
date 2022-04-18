@@ -16,13 +16,14 @@ public interface CustomerService {
 	//All the methods that returns a mono type containing the same data type of the ruling class.
 	//Todos los métodos que devuelven un tipo de dato mono conteniendo el mismo tipo de dato dominante
 	
-	public Mono<Customer> findById(String id);
-	public Mono<Customer> findByPersonalIdentifier(int personalIdentifier);
-	public Mono<Customer> save(Customer customer);
+	public Mono<Object> findById(String id);
+	public Mono<Object> findByPersonalIdentifier(Integer personalIdentifier);
+	public Mono<Object> findByIdOrPersonalIdentifier(String id,Integer personalIdentifier);
+	public Mono<Object> save(Customer customer);
 	
 	
 	//All the methods that returns an mono type containing a different data type than the ruling class.
 	//Todos los métodos que devuelven mono con un contenido diferente al de la clase dominante.
 	
-	public Mono<Void> delete(Customer customer);
+	public Mono<Object> delete(Customer customer);
 }
