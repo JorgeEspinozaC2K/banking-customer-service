@@ -50,9 +50,11 @@ public class Customer {
 	private Date birthDate;
 	
 	//Date of creation of this customer
-	private Date createAt = new Date();
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	private Date createAt;
 	
 	//Date of update of this customer
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date updateAt;
 	
 }

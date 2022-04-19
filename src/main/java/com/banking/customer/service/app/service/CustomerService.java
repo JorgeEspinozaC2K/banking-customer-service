@@ -18,7 +18,7 @@ public interface CustomerService {
 	
 	public Mono<Object> findById(String id);
 	public Mono<Object> findByPersonalIdentifier(Integer personalIdentifier);
-	public Mono<Object> findByIdOrPersonalIdentifier(String id,Integer personalIdentifier);
+	public Mono<Object> findByIdOrPersonalIdentifier(String id);
 	public Mono<Object> save(Customer customer);
 	
 	

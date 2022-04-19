@@ -32,14 +32,14 @@ public class CustomerController {
 		return customerService.findById(id);
 	}
 	
-	@GetMapping("/pid/{id}")
-	public Mono<Object> findBypersonalIdentifier(@PathVariable Integer id){
-		return customerService.findByPersonalIdentifier(id);
+	@GetMapping("/pid/{pid}")
+	public Mono<Object> findBypersonalIdentifier(@PathVariable Integer pid){
+		return customerService.findByPersonalIdentifier(pid);
 	}
 	
-	@GetMapping("/ipid/{id}")
-	public Mono<Object> findByIdOrpersonalIdentifier(@PathVariable Integer id){
-		return customerService.findByIdOrPersonalIdentifier(id.toString(),id);
+	@GetMapping("/ipid/{ipid}")
+	public Mono<Object> findByIdOrpersonalIdentifier(@PathVariable String ipid){
+		return customerService.findByIdOrPersonalIdentifier(ipid);
 	}
 	
 	@PostMapping("/new")
