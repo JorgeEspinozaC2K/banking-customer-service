@@ -11,5 +11,13 @@ spring:
           uri: mongodb+srv://jespinoza:jest444@jespinoza.is5j4.mongodb.net/customer_data
 logging:
   file:
-    path: service-logs
-    
+    name: log/CustomerService.log
+  pattern:
+    console: "%d [%thread] %-5level %-60logger{40} : %msg%n"
+  logback:
+    rollingpolicy:
+      max-file-size: 1MB
+      file-name-pattern: log/CustomerService-%d{yyyy-MM-dd}.%i.log
+      total-size-cap: 11MB
+      clean-history-on-start: true
+      max-history: 10   
