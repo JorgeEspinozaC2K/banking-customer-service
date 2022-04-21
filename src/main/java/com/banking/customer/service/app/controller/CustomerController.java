@@ -28,27 +28,27 @@ public class CustomerController {
 	}
 	
 	@GetMapping("/{id}")
-	public Mono<Object> findById(@PathVariable String id){
+	public Mono<Customer> findById(@PathVariable String id){
 		return customerService.findById(id);
 	}
 	
 	@GetMapping("/pid/{pid}")
-	public Mono<Object> findBypersonalIdentifier(@PathVariable Integer pid){
+	public Mono<Customer> findBypersonalIdentifier(@PathVariable Integer pid){
 		return customerService.findByPersonalIdentifier(pid);
 	}
 	
 	@GetMapping("/ipid/{ipid}")
-	public Mono<Object> findByIdOrpersonalIdentifier(@PathVariable String ipid){
+	public Mono<Customer> findByIdOrpersonalIdentifier(@PathVariable String ipid){
 		return customerService.findByIdOrPersonalIdentifier(ipid);
 	}
 	
 	@PostMapping("/new")
-	public Mono<Object> newCustomer(@RequestBody Customer customer){
+	public Mono<Customer> newCustomer(@RequestBody Customer customer){
 		return customerService.save(customer);
 	}
 	
 	@DeleteMapping("/delete")
-	public Mono<Object> deleteCustomer(@RequestBody Customer customer){
+	public Mono<Void> deleteCustomer(@RequestBody Customer customer){
 		return customerService.delete(customer);
 	}
 

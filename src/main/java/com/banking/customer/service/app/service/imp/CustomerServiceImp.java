@@ -6,10 +6,11 @@ import java.time.Period;
 import java.time.ZoneId;
 import java.util.Date;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.banking.customer.service.app.enity.DocData;
 import com.banking.customer.service.app.model.Customer;
 import com.banking.customer.service.app.repository.CustomerRepository;
 import com.banking.customer.service.app.service.CustomerService;
@@ -20,6 +21,8 @@ import reactor.core.publisher.Mono;
 @Service
 public class CustomerServiceImp implements CustomerService {
 	
+	private static final Logger log = LoggerFactory.getLogger(CustomerServiceImp.class);
+	
 	@Autowired
 	private CustomerRepository customerRepository;
 	
@@ -29,32 +32,38 @@ public class CustomerServiceImp implements CustomerService {
 	}
 
 	@Override
-	public Mono<Object> findById(String id) {
+	public Mono<Customer> findById(String id) {
 		return customerRepository.findById(id)
 				.defaultIfEmpty(new Customer())
 				.flatMap(c -> {
 					if (c.getId() == null) {
-						return Mono.just(new DocData(id,"404","Customer Not Found"));
+						return Mono.error(new InterruptedException("Customer not found"));
 					}
 					return Mono.just(c);
+				}).onErrorResume(_ex -> {
+					log.error(_ex.getMessage());
+					return Mono.empty();
 				});
 	}
 
 	@Override
-	public Mono<Object> findByPersonalIdentifier(Integer personalIdentifier) {
+	public Mono<Customer> findByPersonalIdentifier(Integer personalIdentifier) {
 		
 		return customerRepository.findByPersonalIdentifier(personalIdentifier)
 				.defaultIfEmpty(new Customer())
 				.flatMap(c -> {
 					if (c.getId() == null) {
-						return Mono.just(new DocData(null,"404","Customer Not Found",personalIdentifier.toString()));
+						return Mono.error(new InterruptedException("Customer not found"));
 					}
 					return Mono.just(c);
+				}).onErrorResume(_ex -> {
+					log.error(_ex.getMessage());
+					return Mono.empty();
 				});
 	}
 
 	@Override
-	public Mono<Object> save(Customer customer) {
+	public Mono<Customer> save(Customer customer) {
 		
 		LocalDate date = customer.getBirthDate().toInstant()
 			      .atZone(ZoneId.systemDefault())
@@ -63,7 +72,7 @@ public class CustomerServiceImp implements CustomerService {
 		Period edad = Period.between(date, LocalDate.now());
 		
 		if(edad.getYears() < 18) {
-			return Mono.just(new DocData(null,"406","Customer can't be a minor",customer.getPersonalIdentifier().toString()));
+			return Mono.error(new InterruptedException("The client cant be a minor"));
 		} 
 		else {
 			if(customer.getId()==null) {
@@ -71,21 +80,27 @@ public class CustomerServiceImp implements CustomerService {
 				.defaultIfEmpty(new Customer())
 				.flatMap(c -> {
 					if (c.getPersonalIdentifier() != null) {
-						return Mono.just(new DocData(c.getId(),"302","Customer Already Exist",customer.getPersonalIdentifier().toString()));
+						return Mono.error(new InterruptedException("Customer already exist"));
 					}
 					customer.setCreateAt(new Date());
 					return customerRepository.save(customer);
+				}).onErrorResume(_ex -> {
+					log.error(_ex.getMessage());
+					return Mono.empty();
 				});	
 			}else {
 				return customerRepository.findById(customer.getId())
 						.defaultIfEmpty(new Customer())
 						.flatMap(c -> {
 							if (c.getId() == null) {
-								return Mono.just(new DocData(c.getId(),"404","Customer Not Found, can't update",customer.getPersonalIdentifier().toString()));
+								return Mono.error(new InterruptedException("404 Customer Not Found, can't update ID:" + customer.getPersonalIdentifier().toString()));
 							}
 							customer.setPersonalIdentifier(c.getPersonalIdentifier());
 							customer.setCreateAt(c.getCreateAt());
 							return customerRepository.save(customer);
+						}).onErrorResume(_ex -> {
+							log.error(_ex.getMessage());
+							return Mono.empty();
 						});
 			}
 			
@@ -94,30 +109,35 @@ public class CustomerServiceImp implements CustomerService {
 	}
 
 	@Override
-	public Mono<Object> delete(Customer customer) {
+	public Mono<Void> delete(Customer customer) {
 		
 		return customerRepository.findById(customer.getId())
 				.defaultIfEmpty(new Customer())
 				.flatMap(c -> {
 					if (c.getId() == null) {
-						return Mono.just(new DocData(c.getId(),"404","Inexisting Customer, can't be eliminated"));
+						return Mono.error(new InterruptedException("404 Inexisting Customer, can't be eliminated"));
 					}
-					return customerRepository.delete(customer)
-							.then(Mono.just(new DocData(c.getId(),"200","Correct Deletig",c.getPersonalIdentifier().toString())));
+					return customerRepository.delete(customer);
+				}).onErrorResume(_ex -> {
+					log.error(_ex.getMessage());
+					return Mono.empty();
 				});
 	}
 
 	@Override
-	public Mono<Object> findByIdOrPersonalIdentifier(String id) {
+	public Mono<Customer> findByIdOrPersonalIdentifier(String id) {
 		Integer pid = id.matches("-?\\d+") ? Integer.parseInt(id) : 0;
 		
 		return customerRepository.findByIdOrPersonalIdentifier(id,pid)
 				.defaultIfEmpty(new Customer())
 				.flatMap(c -> {
 					if (c.getId() == null) {
-						return Mono.just(new DocData(c.getId(),"404","Inexisting Customer",pid.toString()));
+						return Mono.error(new InterruptedException("404 Inexisting Customer WITH PID :" + pid.toString()));
 					}
 					return Mono.just(c);
+				}).onErrorResume(_ex -> {
+					log.error(_ex.getMessage());
+					return Mono.empty();
 				});
 	}
 
