@@ -2173,3 +2173,467 @@ Caused by: java.lang.Error: Unresolved compilation problems:
 2022-04-21 02:31:13.086  INFO 16204 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
 2022-04-21 02:31:13.086  INFO 16204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1650526273086 with initial instances count: 2
 2022-04-21 02:31:13.087  INFO 16204 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application BANKING-CUSTOMER-SERVICE with eureka with status UP
+2022-04-21 02:31:13.087  INFO 16204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1650526273087, current=UP, previous=STARTING]
+2022-04-21 02:31:13.087  INFO 16204 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKING-CUSTOMER-SERVICE/LIM-6YYN4M3.usersad.everis.int:banking-customer-service:8082: registering service...
+2022-04-21 02:31:13.092  INFO 16204 --- [cluster-rtt-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-01.is5j4.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:39, serverValue:199464}] to jespinoza-shard-00-01.is5j4.mongodb.net:27017
+2022-04-21 02:31:13.094  INFO 16204 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKING-CUSTOMER-SERVICE/LIM-6YYN4M3.usersad.everis.int:banking-customer-service:8082 - registration status: 204
+2022-04-21 02:31:13.094  INFO 16204 --- [restartedMain] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8082
+2022-04-21 02:31:13.095  INFO 16204 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8082
+2022-04-21 02:31:13.102  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-00.is5j4.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:42, serverValue:199724}] to jespinoza-shard-00-00.is5j4.mongodb.net:27017
+2022-04-21 02:31:13.102  INFO 16204 --- [cluster-rtt-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-02.is5j4.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:41, serverValue:202951}] to jespinoza-shard-00-02.is5j4.mongodb.net:27017
+2022-04-21 02:31:13.102  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-00.is5j4.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=jespinoza-shard-00-00.is5j4.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=445148499, setName='atlas-ob43re-shard-0', canonicalAddress=jespinoza-shard-00-00.is5j4.mongodb.net:27017, hosts=[jespinoza-shard-00-00.is5j4.mongodb.net:27017, jespinoza-shard-00-02.is5j4.mongodb.net:27017, jespinoza-shard-00-01.is5j4.mongodb.net:27017], passives=[], arbiters=[], primary='jespinoza-shard-00-02.is5j4.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='SA_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=1, topologyVersion=TopologyVersion{processId=6255b33eb2f8dd2ca44ad71c, counter=4}, lastWriteDate=Thu Apr 21 02:31:06 COT 2022, lastUpdateTimeNanos=533535629751300}
+2022-04-21 02:31:13.106  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-02.is5j4.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:40, serverValue:202951}] to jespinoza-shard-00-02.is5j4.mongodb.net:27017
+2022-04-21 02:31:13.107  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-02.is5j4.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=jespinoza-shard-00-02.is5j4.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=446011901, setName='atlas-ob43re-shard-0', canonicalAddress=jespinoza-shard-00-02.is5j4.mongodb.net:27017, hosts=[jespinoza-shard-00-00.is5j4.mongodb.net:27017, jespinoza-shard-00-02.is5j4.mongodb.net:27017, jespinoza-shard-00-01.is5j4.mongodb.net:27017], passives=[], arbiters=[], primary='jespinoza-shard-00-02.is5j4.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='SA_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff0000000000000003, setVersion=1, topologyVersion=TopologyVersion{processId=6255b38fc0dee849605ed2e2, counter=6}, lastWriteDate=Thu Apr 21 02:31:06 COT 2022, lastUpdateTimeNanos=533535634193400}
+2022-04-21 02:31:13.107  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-02.is5j4.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max election id to 7fffffff0000000000000003 from replica set primary jespinoza-shard-00-02.is5j4.mongodb.net:27017
+2022-04-21 02:31:13.107  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-02.is5j4.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max set version to 1 from replica set primary jespinoza-shard-00-02.is5j4.mongodb.net:27017
+2022-04-21 02:31:13.107  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-02.is5j4.mongodb.net:27017] org.mongodb.driver.cluster               : Discovered replica set primary jespinoza-shard-00-02.is5j4.mongodb.net:27017
+2022-04-21 02:31:13.113  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-01.is5j4.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:38, serverValue:199464}] to jespinoza-shard-00-01.is5j4.mongodb.net:27017
+2022-04-21 02:31:13.114  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-01.is5j4.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=jespinoza-shard-00-01.is5j4.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=449854800, setName='atlas-ob43re-shard-0', canonicalAddress=jespinoza-shard-00-01.is5j4.mongodb.net:27017, hosts=[jespinoza-shard-00-00.is5j4.mongodb.net:27017, jespinoza-shard-00-02.is5j4.mongodb.net:27017, jespinoza-shard-00-01.is5j4.mongodb.net:27017], passives=[], arbiters=[], primary='jespinoza-shard-00-02.is5j4.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='SA_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=1, topologyVersion=TopologyVersion{processId=6255b3e0b4c5f71f47e9458f, counter=3}, lastWriteDate=Thu Apr 21 02:31:06 COT 2022, lastUpdateTimeNanos=533535641314400}
+2022-04-21 02:31:13.118  INFO 16204 --- [cluster-rtt-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-00.is5j4.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:43, serverValue:199724}] to jespinoza-shard-00-00.is5j4.mongodb.net:27017
+2022-04-21 02:31:13.428  INFO 16204 --- [restartedMain] .c.s.a.BankingCustomerServiceApplication : Started BankingCustomerServiceApplication in 6.994 seconds (JVM running for 113014.479)
+2022-04-21 02:31:13.430  INFO 16204 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-04-21 02:36:13.090  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 02:41:13.095  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 02:46:13.108  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 02:51:13.116  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 02:56:13.127  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 07:57:03.130  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-01.is5j4.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server jespinoza-shard-00-01.is5j4.mongodb.net:27017
+
+com.mongodb.MongoSocketReadException: Exception receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:707) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:579) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:415) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:374) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:216) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152) ~[mongodb-driver-core-4.4.2.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+Caused by: java.io.IOException: Se ha forzado la interrupción de una conexión existente por el host remoto
+	at sun.nio.ch.SocketDispatcher.read0(Native Method) ~[na:1.8.0_311]
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43) ~[na:1.8.0_311]
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223) ~[na:1.8.0_311]
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192) ~[na:1.8.0_311]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:378) ~[na:1.8.0_311]
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:258) ~[netty-buffer-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132) ~[netty-buffer-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:722) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	... 1 common frames omitted
+
+2022-04-21 07:57:03.130  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-00.is5j4.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server jespinoza-shard-00-00.is5j4.mongodb.net:27017
+
+com.mongodb.MongoSocketReadException: Exception receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:707) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:579) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:415) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:374) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:216) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152) ~[mongodb-driver-core-4.4.2.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+Caused by: java.io.IOException: Se ha forzado la interrupción de una conexión existente por el host remoto
+	at sun.nio.ch.SocketDispatcher.read0(Native Method) ~[na:1.8.0_311]
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43) ~[na:1.8.0_311]
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223) ~[na:1.8.0_311]
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192) ~[na:1.8.0_311]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:378) ~[na:1.8.0_311]
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:258) ~[netty-buffer-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132) ~[netty-buffer-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:722) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	... 1 common frames omitted
+
+2022-04-21 07:57:03.131  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-02.is5j4.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server jespinoza-shard-00-02.is5j4.mongodb.net:27017
+
+com.mongodb.MongoSocketReadException: Exception receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:707) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:579) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:415) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:374) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:216) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152) ~[mongodb-driver-core-4.4.2.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+Caused by: java.io.IOException: Se ha forzado la interrupción de una conexión existente por el host remoto
+	at sun.nio.ch.SocketDispatcher.read0(Native Method) ~[na:1.8.0_311]
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43) ~[na:1.8.0_311]
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223) ~[na:1.8.0_311]
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192) ~[na:1.8.0_311]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:378) ~[na:1.8.0_311]
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:258) ~[netty-buffer-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132) ~[netty-buffer-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:722) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	... 1 common frames omitted
+
+2022-04-21 07:57:04.769  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-00.is5j4.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:45, serverValue:204333}] to jespinoza-shard-00-00.is5j4.mongodb.net:27017
+2022-04-21 07:57:04.769  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-01.is5j4.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:44, serverValue:204074}] to jespinoza-shard-00-01.is5j4.mongodb.net:27017
+2022-04-21 07:57:04.770  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-00.is5j4.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=jespinoza-shard-00-00.is5j4.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1284764501, setName='atlas-ob43re-shard-0', canonicalAddress=jespinoza-shard-00-00.is5j4.mongodb.net:27017, hosts=[jespinoza-shard-00-00.is5j4.mongodb.net:27017, jespinoza-shard-00-02.is5j4.mongodb.net:27017, jespinoza-shard-00-01.is5j4.mongodb.net:27017], passives=[], arbiters=[], primary='jespinoza-shard-00-02.is5j4.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='SA_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=1, topologyVersion=TopologyVersion{processId=6255b33eb2f8dd2ca44ad71c, counter=4}, lastWriteDate=Thu Apr 21 07:56:56 COT 2022, lastUpdateTimeNanos=553087298228399}
+2022-04-21 07:57:04.770  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-01.is5j4.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=jespinoza-shard-00-01.is5j4.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1287435700, setName='atlas-ob43re-shard-0', canonicalAddress=jespinoza-shard-00-01.is5j4.mongodb.net:27017, hosts=[jespinoza-shard-00-00.is5j4.mongodb.net:27017, jespinoza-shard-00-02.is5j4.mongodb.net:27017, jespinoza-shard-00-01.is5j4.mongodb.net:27017], passives=[], arbiters=[], primary='jespinoza-shard-00-02.is5j4.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='SA_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=1, topologyVersion=TopologyVersion{processId=6255b3e0b4c5f71f47e9458f, counter=3}, lastWriteDate=Thu Apr 21 07:56:56 COT 2022, lastUpdateTimeNanos=553087298228399}
+2022-04-21 07:57:05.152  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-02.is5j4.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:46, serverValue:207571}] to jespinoza-shard-00-02.is5j4.mongodb.net:27017
+2022-04-21 07:57:05.152  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-02.is5j4.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=jespinoza-shard-00-02.is5j4.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1525262699, setName='atlas-ob43re-shard-0', canonicalAddress=jespinoza-shard-00-02.is5j4.mongodb.net:27017, hosts=[jespinoza-shard-00-00.is5j4.mongodb.net:27017, jespinoza-shard-00-02.is5j4.mongodb.net:27017, jespinoza-shard-00-01.is5j4.mongodb.net:27017], passives=[], arbiters=[], primary='jespinoza-shard-00-02.is5j4.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='SA_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff0000000000000003, setVersion=1, topologyVersion=TopologyVersion{processId=6255b38fc0dee849605ed2e2, counter=6}, lastWriteDate=Thu Apr 21 07:56:56 COT 2022, lastUpdateTimeNanos=553087680828099}
+2022-04-21 07:57:05.153  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-02.is5j4.mongodb.net:27017] org.mongodb.driver.cluster               : Discovered replica set primary jespinoza-shard-00-02.is5j4.mongodb.net:27017
+2022-04-21 07:57:18.072  INFO 16204 --- [cluster-rtt-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-01.is5j4.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:47, serverValue:204076}] to jespinoza-shard-00-01.is5j4.mongodb.net:27017
+2022-04-21 07:57:18.453  INFO 16204 --- [cluster-rtt-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-02.is5j4.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:48, serverValue:207577}] to jespinoza-shard-00-02.is5j4.mongodb.net:27017
+2022-04-21 07:57:28.682  INFO 16204 --- [cluster-rtt-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-00.is5j4.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:49, serverValue:204341}] to jespinoza-shard-00-00.is5j4.mongodb.net:27017
+2022-04-21 07:58:30.870  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 08:03:30.879  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 08:08:30.893  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 08:13:30.906  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 08:18:30.912  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 08:23:30.915  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 08:28:30.930  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 08:33:30.940  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 08:38:30.952  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 08:43:30.964  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 08:48:30.974  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 08:53:30.976  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 08:58:30.984  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 09:03:30.989  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 09:08:31.005  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 09:12:57.938  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-01.is5j4.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server jespinoza-shard-00-01.is5j4.mongodb.net:27017
+
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.connection.netty.NettyStream$InboundBufferHandler.exceptionCaught(NettyStream.java:427) ~[mongodb-driver-core-4.4.2.jar:na]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:302) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:281) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireExceptionCaught(AbstractChannelHandlerContext.java:273) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at com.mongodb.connection.netty.NettyStream$ReadTimeoutTask.run(NettyStream.java:564) ~[mongodb-driver-core-4.4.2.jar:na]
+	at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:170) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:469) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:503) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+Caused by: io.netty.handler.timeout.ReadTimeoutException: null
+
+2022-04-21 09:12:58.109  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-00.is5j4.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server jespinoza-shard-00-00.is5j4.mongodb.net:27017
+
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.connection.netty.NettyStream$InboundBufferHandler.exceptionCaught(NettyStream.java:427) ~[mongodb-driver-core-4.4.2.jar:na]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:302) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:281) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireExceptionCaught(AbstractChannelHandlerContext.java:273) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at com.mongodb.connection.netty.NettyStream$ReadTimeoutTask.run(NettyStream.java:564) ~[mongodb-driver-core-4.4.2.jar:na]
+	at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:170) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:469) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:503) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+Caused by: io.netty.handler.timeout.ReadTimeoutException: null
+
+2022-04-21 09:13:07.362  INFO 16204 --- [cluster-rtt-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-01.is5j4.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:52, serverValue:205163}] to jespinoza-shard-00-01.is5j4.mongodb.net:27017
+2022-04-21 09:13:08.297  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-00.is5j4.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server jespinoza-shard-00-00.is5j4.mongodb.net:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:520) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:488) ~[mongodb-driver-core-4.4.2.jar:na]
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:578) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:571) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:550) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:491) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:616) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:609) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:117) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:262) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:170) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:469) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:503) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+Caused by: io.netty.channel.ConnectTimeoutException: connection timed out: jespinoza-shard-00-00.is5j4.mongodb.net/54.207.120.25:27017
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:261) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	... 9 common frames omitted
+
+2022-04-21 09:13:08.360  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-01.is5j4.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server jespinoza-shard-00-01.is5j4.mongodb.net:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:520) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:488) ~[mongodb-driver-core-4.4.2.jar:na]
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:578) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:571) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:550) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:491) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:616) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:609) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:117) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:262) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:170) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:469) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:503) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+Caused by: io.netty.channel.ConnectTimeoutException: connection timed out: jespinoza-shard-00-01.is5j4.mongodb.net/54.207.85.63:27017
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:261) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	... 9 common frames omitted
+
+2022-04-21 09:13:18.929  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-00.is5j4.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:53, serverValue:205426}] to jespinoza-shard-00-00.is5j4.mongodb.net:27017
+2022-04-21 09:13:18.929  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-00.is5j4.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=jespinoza-shard-00-00.is5j4.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=460642399, setName='atlas-ob43re-shard-0', canonicalAddress=jespinoza-shard-00-00.is5j4.mongodb.net:27017, hosts=[jespinoza-shard-00-00.is5j4.mongodb.net:27017, jespinoza-shard-00-02.is5j4.mongodb.net:27017, jespinoza-shard-00-01.is5j4.mongodb.net:27017], passives=[], arbiters=[], primary='jespinoza-shard-00-02.is5j4.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='SA_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=1, topologyVersion=TopologyVersion{processId=6255b33eb2f8dd2ca44ad71c, counter=4}, lastWriteDate=Thu Apr 21 09:13:08 COT 2022, lastUpdateTimeNanos=557661457659699}
+2022-04-21 09:13:31.011  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 09:14:19.147  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-01.is5j4.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:57, serverValue:205183}] to jespinoza-shard-00-01.is5j4.mongodb.net:27017
+2022-04-21 09:14:19.147  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-01.is5j4.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=jespinoza-shard-00-01.is5j4.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=464800899, setName='atlas-ob43re-shard-0', canonicalAddress=jespinoza-shard-00-01.is5j4.mongodb.net:27017, hosts=[jespinoza-shard-00-00.is5j4.mongodb.net:27017, jespinoza-shard-00-02.is5j4.mongodb.net:27017, jespinoza-shard-00-01.is5j4.mongodb.net:27017], passives=[], arbiters=[], primary='jespinoza-shard-00-02.is5j4.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='SA_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=1, topologyVersion=TopologyVersion{processId=6255b3e0b4c5f71f47e9458f, counter=3}, lastWriteDate=Thu Apr 21 09:14:16 COT 2022, lastUpdateTimeNanos=557721675492799}
+2022-04-21 09:18:31.014  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 09:23:31.023  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 09:28:31.025  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 09:33:31.026  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 09:38:31.030  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 09:43:31.039  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 09:48:31.050  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 09:53:31.055  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 09:58:31.071  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 10:03:31.087  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 10:08:31.101  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 10:13:31.102  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 10:18:31.116  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 10:23:31.118  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 10:28:31.121  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 10:33:31.129  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 10:38:31.139  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 10:43:31.149  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 10:48:31.153  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 10:53:31.155  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 11:01:00.082  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-02.is5j4.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server jespinoza-shard-00-02.is5j4.mongodb.net:27017
+
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.connection.netty.NettyStream$InboundBufferHandler.exceptionCaught(NettyStream.java:427) ~[mongodb-driver-core-4.4.2.jar:na]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:302) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:281) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireExceptionCaught(AbstractChannelHandlerContext.java:273) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at com.mongodb.connection.netty.NettyStream$ReadTimeoutTask.run(NettyStream.java:564) ~[mongodb-driver-core-4.4.2.jar:na]
+	at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:170) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:469) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:503) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+Caused by: io.netty.handler.timeout.ReadTimeoutException: null
+
+2022-04-21 11:01:00.716  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-00.is5j4.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server jespinoza-shard-00-00.is5j4.mongodb.net:27017
+
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.connection.netty.NettyStream$InboundBufferHandler.exceptionCaught(NettyStream.java:427) ~[mongodb-driver-core-4.4.2.jar:na]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:302) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:281) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireExceptionCaught(AbstractChannelHandlerContext.java:273) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at com.mongodb.connection.netty.NettyStream$ReadTimeoutTask.run(NettyStream.java:564) ~[mongodb-driver-core-4.4.2.jar:na]
+	at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:170) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:469) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:503) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+Caused by: io.netty.handler.timeout.ReadTimeoutException: null
+
+2022-04-21 11:01:00.817  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-02.is5j4.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:58, serverValue:210352}] to jespinoza-shard-00-02.is5j4.mongodb.net:27017
+2022-04-21 11:01:00.817  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-02.is5j4.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=jespinoza-shard-00-02.is5j4.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=458324800, setName='atlas-ob43re-shard-0', canonicalAddress=jespinoza-shard-00-02.is5j4.mongodb.net:27017, hosts=[jespinoza-shard-00-00.is5j4.mongodb.net:27017, jespinoza-shard-00-02.is5j4.mongodb.net:27017, jespinoza-shard-00-01.is5j4.mongodb.net:27017], passives=[], arbiters=[], primary='jespinoza-shard-00-02.is5j4.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='SA_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff0000000000000003, setVersion=1, topologyVersion=TopologyVersion{processId=6255b38fc0dee849605ed2e2, counter=6}, lastWriteDate=Thu Apr 21 11:00:56 COT 2022, lastUpdateTimeNanos=564123345712100}
+2022-04-21 11:01:00.818  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-02.is5j4.mongodb.net:27017] org.mongodb.driver.cluster               : Discovered replica set primary jespinoza-shard-00-02.is5j4.mongodb.net:27017
+2022-04-21 11:01:00.821  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-01.is5j4.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server jespinoza-shard-00-01.is5j4.mongodb.net:27017
+
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.connection.netty.NettyStream$InboundBufferHandler.exceptionCaught(NettyStream.java:427) ~[mongodb-driver-core-4.4.2.jar:na]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:302) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:281) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireExceptionCaught(AbstractChannelHandlerContext.java:273) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at com.mongodb.connection.netty.NettyStream$ReadTimeoutTask.run(NettyStream.java:564) ~[mongodb-driver-core-4.4.2.jar:na]
+	at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:170) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:469) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:503) ~[netty-transport-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.75.Final.jar:4.1.75.Final]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+Caused by: io.netty.handler.timeout.ReadTimeoutException: null
+
+2022-04-21 11:01:01.356  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-00.is5j4.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:59, serverValue:207134}] to jespinoza-shard-00-00.is5j4.mongodb.net:27017
+2022-04-21 11:01:01.356  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-00.is5j4.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=jespinoza-shard-00-00.is5j4.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=491553000, setName='atlas-ob43re-shard-0', canonicalAddress=jespinoza-shard-00-00.is5j4.mongodb.net:27017, hosts=[jespinoza-shard-00-00.is5j4.mongodb.net:27017, jespinoza-shard-00-02.is5j4.mongodb.net:27017, jespinoza-shard-00-01.is5j4.mongodb.net:27017], passives=[], arbiters=[], primary='jespinoza-shard-00-02.is5j4.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='SA_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=1, topologyVersion=TopologyVersion{processId=6255b33eb2f8dd2ca44ad71c, counter=4}, lastWriteDate=Thu Apr 21 11:00:56 COT 2022, lastUpdateTimeNanos=564123884615500}
+2022-04-21 11:01:01.466  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-01.is5j4.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:60, serverValue:206805}] to jespinoza-shard-00-01.is5j4.mongodb.net:27017
+2022-04-21 11:01:01.466  INFO 16204 --- [cluster-ClusterId{value='6261083eeb5028241c0eff49', description='null'}-jespinoza-shard-00-01.is5j4.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=jespinoza-shard-00-01.is5j4.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=479944700, setName='atlas-ob43re-shard-0', canonicalAddress=jespinoza-shard-00-01.is5j4.mongodb.net:27017, hosts=[jespinoza-shard-00-00.is5j4.mongodb.net:27017, jespinoza-shard-00-02.is5j4.mongodb.net:27017, jespinoza-shard-00-01.is5j4.mongodb.net:27017], passives=[], arbiters=[], primary='jespinoza-shard-00-02.is5j4.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='SA_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=1, topologyVersion=TopologyVersion{processId=6255b3e0b4c5f71f47e9458f, counter=3}, lastWriteDate=Thu Apr 21 11:00:56 COT 2022, lastUpdateTimeNanos=564123994517100}
+2022-04-21 11:01:47.901  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 11:06:47.906  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 11:11:47.911  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 11:16:47.927  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 11:21:47.933  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 11:26:47.940  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 11:31:47.951  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 11:36:47.955  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 11:41:47.962  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 11:46:47.965  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 11:51:47.978  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 11:56:47.980  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 12:01:47.986  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 12:06:47.997  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 12:11:48.005  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 12:16:48.006  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 12:21:48.009  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 12:26:48.019  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 12:31:48.025  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 12:36:48.030  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 12:41:48.033  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 12:46:48.043  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 12:51:48.052  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 12:56:48.066  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 13:01:48.075  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 13:06:48.079  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 13:09:33.801  INFO 16204 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKING-CUSTOMER-SERVICE/LIM-6YYN4M3.usersad.everis.int:banking-customer-service:8082 - Re-registering apps/BANKING-CUSTOMER-SERVICE
+2022-04-21 13:09:33.802  INFO 16204 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKING-CUSTOMER-SERVICE/LIM-6YYN4M3.usersad.everis.int:banking-customer-service:8082: registering service...
+2022-04-21 13:09:33.812  INFO 16204 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKING-CUSTOMER-SERVICE/LIM-6YYN4M3.usersad.everis.int:banking-customer-service:8082 - registration status: 204
+2022-04-21 13:10:03.817  INFO 16204 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-04-21 13:10:03.817  INFO 16204 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-04-21 13:10:03.817  INFO 16204 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-04-21 13:10:03.817  INFO 16204 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-04-21 13:10:03.817  INFO 16204 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-04-21 13:10:03.818  INFO 16204 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2022-04-21 13:10:03.818  INFO 16204 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-04-21 13:10:03.834  INFO 16204 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-04-21 13:11:48.085  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 13:16:48.100  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 13:21:48.111  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 13:26:48.119  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 13:31:48.133  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 13:36:48.135  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 13:41:48.145  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 13:46:48.157  INFO 16204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 13:47:12.466  INFO 16204 --- [Thread-153] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application BANKING-CUSTOMER-SERVICE with eureka with status DOWN
+2022-04-21 13:47:12.466  INFO 16204 --- [Thread-153] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1650566832466, current=DOWN, previous=UP]
+2022-04-21 13:47:12.468  INFO 16204 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKING-CUSTOMER-SERVICE/LIM-6YYN4M3.usersad.everis.int:banking-customer-service:8082: registering service...
+2022-04-21 13:47:12.485  INFO 16204 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKING-CUSTOMER-SERVICE/LIM-6YYN4M3.usersad.everis.int:banking-customer-service:8082 - registration status: 204
+2022-04-21 13:47:16.623  INFO 16204 --- [Thread-153] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2022-04-21 13:47:19.635  INFO 16204 --- [Thread-153] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2022-04-21 13:47:19.650  INFO 16204 --- [Thread-153] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKING-CUSTOMER-SERVICE/LIM-6YYN4M3.usersad.everis.int:banking-customer-service:8082 - deregister  status: 200
+2022-04-21 13:47:19.652  INFO 16204 --- [Thread-153] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2022-04-21 13:47:20.378  INFO 16204 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8090
+2022-04-21 13:47:22.103  INFO 16204 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=banking-customer-service, profiles=[default], label=null, version=190eac02c39f3a5b4bd2e7cfac2a461ef921e4b8, state=null
+2022-04-21 13:47:22.103  INFO 16204 --- [restartedMain] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/JorgeEspinozaC2K/banking-config-data.git/file:C:\Users\jespcana\AppData\Local\Temp\config-repo-5116069282997236147\banking-customer-service.yml'}]
+2022-04-21 13:47:22.109  INFO 16204 --- [restartedMain] .c.s.a.BankingCustomerServiceApplication : No active profile set, falling back to 1 default profile: "default"
+2022-04-21 13:47:22.259  INFO 16204 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2022-04-21 13:47:22.266  INFO 16204 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 1 Reactive MongoDB repository interfaces.
+2022-04-21 13:47:22.312  INFO 16204 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ead83ea0-1274-3c94-9f70-a2aaeb98b3a2
+2022-04-21 13:47:22.321  INFO 16204 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-21 13:47:22.321  INFO 16204 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-21 13:47:22.322  INFO 16204 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-21 13:47:24.470  INFO 16204 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[127.0.0.1:27017], srvHost=jespinoza.is5j4.mongodb.net, mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', requiredReplicaSetName='atlas-ob43re-shard-0'}
+2022-04-21 13:47:26.607  WARN 16204 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-04-21 13:47:26.614  INFO 16204 --- [cluster-ClusterId{value='6261a6bceb5028241c0eff4a', description='null'}-srv-jespinoza.is5j4.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server jespinoza-shard-00-01.is5j4.mongodb.net:27017 to client view of cluster
+2022-04-21 13:47:26.617  INFO 16204 --- [cluster-ClusterId{value='6261a6bceb5028241c0eff4a', description='null'}-srv-jespinoza.is5j4.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server jespinoza-shard-00-02.is5j4.mongodb.net:27017 to client view of cluster
+2022-04-21 13:47:26.618  INFO 16204 --- [cluster-ClusterId{value='6261a6bceb5028241c0eff4a', description='null'}-srv-jespinoza.is5j4.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server jespinoza-shard-00-00.is5j4.mongodb.net:27017 to client view of cluster
+2022-04-21 13:47:26.626  WARN 16204 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2022-04-21 13:47:26.634  WARN 16204 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-04-21 13:47:26.866  INFO 16204 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2022-04-21 13:47:27.205  WARN 16204 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-04-21 13:47:27.217  INFO 16204 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-04-21 13:47:27.219  INFO 16204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-04-21 13:47:27.219  INFO 16204 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 13:47:27.219  INFO 16204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-04-21 13:47:27.220  INFO 16204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-04-21 13:47:27.220  INFO 16204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-04-21 13:47:27.220  INFO 16204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-04-21 13:47:27.220  INFO 16204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-04-21 13:47:27.220  INFO 16204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-04-21 13:47:27.220  INFO 16204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-04-21 13:47:27.228  INFO 16204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-04-21 13:47:27.228  INFO 16204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-04-21 13:47:27.229  INFO 16204 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-04-21 13:47:27.229  INFO 16204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1650566847229 with initial instances count: 4
+2022-04-21 13:47:27.230  INFO 16204 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application BANKING-CUSTOMER-SERVICE with eureka with status UP
+2022-04-21 13:47:27.230  INFO 16204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1650566847230, current=UP, previous=STARTING]
+2022-04-21 13:47:27.231  INFO 16204 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKING-CUSTOMER-SERVICE/LIM-6YYN4M3.usersad.everis.int:banking-customer-service:8082: registering service...
+2022-04-21 13:47:27.237  INFO 16204 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKING-CUSTOMER-SERVICE/LIM-6YYN4M3.usersad.everis.int:banking-customer-service:8082 - registration status: 204
+2022-04-21 13:47:27.239  INFO 16204 --- [restartedMain] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8082
+2022-04-21 13:47:27.240  INFO 16204 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8082
+2022-04-21 13:47:27.416  INFO 16204 --- [cluster-rtt-ClusterId{value='6261a6bceb5028241c0eff4a', description='null'}-jespinoza-shard-00-00.is5j4.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:65, serverValue:209661}] to jespinoza-shard-00-00.is5j4.mongodb.net:27017
+2022-04-21 13:47:27.429  INFO 16204 --- [cluster-ClusterId{value='6261a6bceb5028241c0eff4a', description='null'}-jespinoza-shard-00-01.is5j4.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:61, serverValue:209325}] to jespinoza-shard-00-01.is5j4.mongodb.net:27017
+2022-04-21 13:47:27.429  INFO 16204 --- [cluster-ClusterId{value='6261a6bceb5028241c0eff4a', description='null'}-jespinoza-shard-00-01.is5j4.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=jespinoza-shard-00-01.is5j4.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=458807800, setName='atlas-ob43re-shard-0', canonicalAddress=jespinoza-shard-00-01.is5j4.mongodb.net:27017, hosts=[jespinoza-shard-00-00.is5j4.mongodb.net:27017, jespinoza-shard-00-02.is5j4.mongodb.net:27017, jespinoza-shard-00-01.is5j4.mongodb.net:27017], passives=[], arbiters=[], primary='jespinoza-shard-00-02.is5j4.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='SA_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=1, topologyVersion=TopologyVersion{processId=6255b3e0b4c5f71f47e9458f, counter=3}, lastWriteDate=Thu Apr 21 13:47:26 COT 2022, lastUpdateTimeNanos=574109957089000}
+2022-04-21 13:47:27.433  INFO 16204 --- [cluster-ClusterId{value='6261a6bceb5028241c0eff4a', description='null'}-jespinoza-shard-00-00.is5j4.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:66, serverValue:209661}] to jespinoza-shard-00-00.is5j4.mongodb.net:27017
+2022-04-21 13:47:27.433  INFO 16204 --- [cluster-ClusterId{value='6261a6bceb5028241c0eff4a', description='null'}-jespinoza-shard-00-00.is5j4.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=jespinoza-shard-00-00.is5j4.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=464847700, setName='atlas-ob43re-shard-0', canonicalAddress=jespinoza-shard-00-00.is5j4.mongodb.net:27017, hosts=[jespinoza-shard-00-00.is5j4.mongodb.net:27017, jespinoza-shard-00-02.is5j4.mongodb.net:27017, jespinoza-shard-00-01.is5j4.mongodb.net:27017], passives=[], arbiters=[], primary='jespinoza-shard-00-02.is5j4.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='SA_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=1, topologyVersion=TopologyVersion{processId=6255b33eb2f8dd2ca44ad71c, counter=4}, lastWriteDate=Thu Apr 21 13:47:26 COT 2022, lastUpdateTimeNanos=574109961246300}
+2022-04-21 13:47:27.439  INFO 16204 --- [cluster-rtt-ClusterId{value='6261a6bceb5028241c0eff4a', description='null'}-jespinoza-shard-00-01.is5j4.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:62, serverValue:209325}] to jespinoza-shard-00-01.is5j4.mongodb.net:27017
+2022-04-21 13:47:27.480  INFO 16204 --- [cluster-rtt-ClusterId{value='6261a6bceb5028241c0eff4a', description='null'}-jespinoza-shard-00-02.is5j4.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:64, serverValue:212900}] to jespinoza-shard-00-02.is5j4.mongodb.net:27017
+2022-04-21 13:47:27.489  INFO 16204 --- [cluster-ClusterId{value='6261a6bceb5028241c0eff4a', description='null'}-jespinoza-shard-00-02.is5j4.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:63, serverValue:212900}] to jespinoza-shard-00-02.is5j4.mongodb.net:27017
+2022-04-21 13:47:27.490  INFO 16204 --- [cluster-ClusterId{value='6261a6bceb5028241c0eff4a', description='null'}-jespinoza-shard-00-02.is5j4.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=jespinoza-shard-00-02.is5j4.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=472105300, setName='atlas-ob43re-shard-0', canonicalAddress=jespinoza-shard-00-02.is5j4.mongodb.net:27017, hosts=[jespinoza-shard-00-00.is5j4.mongodb.net:27017, jespinoza-shard-00-02.is5j4.mongodb.net:27017, jespinoza-shard-00-01.is5j4.mongodb.net:27017], passives=[], arbiters=[], primary='jespinoza-shard-00-02.is5j4.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='SA_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff0000000000000003, setVersion=1, topologyVersion=TopologyVersion{processId=6255b38fc0dee849605ed2e2, counter=6}, lastWriteDate=Thu Apr 21 13:47:26 COT 2022, lastUpdateTimeNanos=574110017373200}
+2022-04-21 13:47:27.490  INFO 16204 --- [cluster-ClusterId{value='6261a6bceb5028241c0eff4a', description='null'}-jespinoza-shard-00-02.is5j4.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max election id to 7fffffff0000000000000003 from replica set primary jespinoza-shard-00-02.is5j4.mongodb.net:27017
+2022-04-21 13:47:27.490  INFO 16204 --- [cluster-ClusterId{value='6261a6bceb5028241c0eff4a', description='null'}-jespinoza-shard-00-02.is5j4.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max set version to 1 from replica set primary jespinoza-shard-00-02.is5j4.mongodb.net:27017
+2022-04-21 13:47:27.490  INFO 16204 --- [cluster-ClusterId{value='6261a6bceb5028241c0eff4a', description='null'}-jespinoza-shard-00-02.is5j4.mongodb.net:27017] org.mongodb.driver.cluster               : Discovered replica set primary jespinoza-shard-00-02.is5j4.mongodb.net:27017
+2022-04-21 13:47:27.574  INFO 16204 --- [restartedMain] .c.s.a.BankingCustomerServiceApplication : Started BankingCustomerServiceApplication in 7.706 seconds (JVM running for 153588.625)
+2022-04-21 13:47:27.575  INFO 16204 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-04-21 13:52:08.309  INFO 16204 --- [Thread-171] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application BANKING-CUSTOMER-SERVICE with eureka with status DOWN
+2022-04-21 13:52:08.309  INFO 16204 --- [Thread-171] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1650567128309, current=DOWN, previous=UP]
+2022-04-21 13:52:08.310  INFO 16204 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKING-CUSTOMER-SERVICE/LIM-6YYN4M3.usersad.everis.int:banking-customer-service:8082: registering service...
+2022-04-21 13:52:08.323  INFO 16204 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKING-CUSTOMER-SERVICE/LIM-6YYN4M3.usersad.everis.int:banking-customer-service:8082 - registration status: 204
+2022-04-21 13:52:12.430  INFO 16204 --- [Thread-171] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2022-04-21 13:52:15.445  INFO 16204 --- [Thread-171] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2022-04-21 13:52:15.462  INFO 16204 --- [Thread-171] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BANKING-CUSTOMER-SERVICE/LIM-6YYN4M3.usersad.everis.int:banking-customer-service:8082 - deregister  status: 200
+2022-04-21 13:52:15.464  INFO 16204 --- [Thread-171] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2022-04-21 13:52:15.988  INFO 16204 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8090
+2022-04-21 13:52:17.263  INFO 16204 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=banking-customer-service, profiles=[default], label=null, version=190eac02c39f3a5b4bd2e7cfac2a461ef921e4b8, state=null
+2022-04-21 13:52:17.264  INFO 16204 --- [restartedMain] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/JorgeEspinozaC2K/banking-config-data.git/file:C:\Users\jespcana\AppData\Local\Temp\config-repo-5116069282997236147\banking-customer-service.yml'}]
+2022-04-21 13:52:17.269  INFO 16204 --- [restartedMain] .c.s.a.BankingCustomerServiceApplication : No active profile set, falling back to 1 default profile: "default"
+2022-04-21 13:52:17.397  INFO 16204 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2022-04-21 13:52:17.404  INFO 16204 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 1 Reactive MongoDB repository interfaces.
+2022-04-21 13:52:17.440  INFO 16204 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ead83ea0-1274-3c94-9f70-a2aaeb98b3a2
+2022-04-21 13:52:17.446  INFO 16204 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-21 13:52:17.446  INFO 16204 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-21 13:52:17.447  INFO 16204 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-21 13:52:19.631  INFO 16204 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[127.0.0.1:27017], srvHost=jespinoza.is5j4.mongodb.net, mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', requiredReplicaSetName='atlas-ob43re-shard-0'}
+2022-04-21 13:52:21.775  INFO 16204 --- [cluster-ClusterId{value='6261a7e3eb5028241c0eff4b', description='null'}-srv-jespinoza.is5j4.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server jespinoza-shard-00-01.is5j4.mongodb.net:27017 to client view of cluster
+2022-04-21 13:52:21.776  WARN 16204 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-04-21 13:52:21.777  INFO 16204 --- [cluster-ClusterId{value='6261a7e3eb5028241c0eff4b', description='null'}-srv-jespinoza.is5j4.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server jespinoza-shard-00-02.is5j4.mongodb.net:27017 to client view of cluster
+2022-04-21 13:52:21.778  INFO 16204 --- [cluster-ClusterId{value='6261a7e3eb5028241c0eff4b', description='null'}-srv-jespinoza.is5j4.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server jespinoza-shard-00-00.is5j4.mongodb.net:27017 to client view of cluster
+2022-04-21 13:52:21.789  WARN 16204 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2022-04-21 13:52:21.795  WARN 16204 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-04-21 13:52:22.010  INFO 16204 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2022-04-21 13:52:22.346  WARN 16204 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-04-21 13:52:22.364  INFO 16204 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-04-21 13:52:22.364  INFO 16204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-04-21 13:52:22.365  INFO 16204 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-21 13:52:22.365  INFO 16204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-04-21 13:52:22.365  INFO 16204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-04-21 13:52:22.365  INFO 16204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-04-21 13:52:22.365  INFO 16204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-04-21 13:52:22.365  INFO 16204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-04-21 13:52:22.365  INFO 16204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-04-21 13:52:22.365  INFO 16204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-04-21 13:52:22.373  INFO 16204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-04-21 13:52:22.374  INFO 16204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-04-21 13:52:22.374  INFO 16204 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-04-21 13:52:22.375  INFO 16204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1650567142375 with initial instances count: 4
+2022-04-21 13:52:22.375  INFO 16204 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application BANKING-CUSTOMER-SERVICE with eureka with status UP
