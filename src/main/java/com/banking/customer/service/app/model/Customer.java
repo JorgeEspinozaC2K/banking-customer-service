@@ -40,9 +40,9 @@ public class Customer {
 	@NotEmpty
 	private Integer personalIdentifier;
 	
-	private Integer tributaryIdentifier;
+	private Integer tributaryIdentifier ;
 	
-	private Boolean isTributary;
+	private Boolean isTributary = false;
 	
 	//Email of customer
 	//Correo electrónico del cliente
