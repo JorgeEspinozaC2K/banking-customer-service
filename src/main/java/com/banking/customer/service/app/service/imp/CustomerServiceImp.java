@@ -2,8 +2,6 @@ package com.banking.customer.service.app.service.imp;
 
 import java.time.LocalDate;
 import java.time.Period;
-import java.time.ZoneId;
-import java.util.Date;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -63,42 +61,43 @@ public class CustomerServiceImp implements CustomerService {
 	@Override
 	public Mono<Customer> save(Customer customer) {
 
-		LocalDate date = customer.getBirthDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-
-		Period edad = Period.between(date, LocalDate.now());
-
-		if (edad.getYears() < 18) {
+		Integer edad = Period.between(customer.getBirthDate(), LocalDate.now()).getYears();
+		
+		if (edad < 18) {
 			return Mono.error(new InterruptedException("The client cant be a minor"));
-		} else {
-			if (customer.getId() == null) {
+		}
+		
+		if (customer.getId() == null) {
+			
+				if (customer.getIsTributary()) {
+					customer.setIsPyme(customer.getIsVip() ? false : customer.getIsPyme());
+					customer.setPersonalIdentifier(null);
+				}
+
+				customer.setTributaryIdentifier(!customer.getIsTributary() ? null : customer.getTributaryIdentifier());
+
+				customer.setIsVip(customer.getIsPyme() ? false : customer.getIsVip());
+			
 				return customerRepository.findByPersonalIdentifier(customer.getPersonalIdentifier())
+						.switchIfEmpty(customerRepository.findByTributaryIdentifier(customer.getTributaryIdentifier()))
 						.defaultIfEmpty(new Customer())
-						.flatMap(c -> {
-							if (c.getPersonalIdentifier() != null) {
-								return Mono.error(new InterruptedException("Customer already exist"));
-							}
-							customer.setCreateAt(new Date());
-							return customerRepository.save(customer);
-						}).onErrorResume(_ex -> {
-							log.error(_ex.getMessage());
-							return Mono.empty();
-						});
-			} else {
-				return customerRepository.findById(customer.getId()).defaultIfEmpty(new Customer()).flatMap(c -> {
-					if (c.getId() == null) {
-						return Mono.error(new InterruptedException("404 Customer Not Found, can't update ID:"
-								+ customer.getPersonalIdentifier().toString()));
-					}
+						.flatMap(c -> c.getId() != null ? Mono.error(new InterruptedException("Customer already exist"))
+								:customerRepository.save(customer))
+						.doOnError(_ex->log.error(_ex.getMessage()))
+						.onErrorResume(_ex -> Mono.empty());
+		}
+		return customerRepository.findById(customer.getId())
+				.switchIfEmpty(Mono.error(new InterruptedException("404 Customer Not Found, can't update ID:"
+								+ customer.getPersonalIdentifier().toString())))
+				.map(c -> {
+					customer.setIsPyme(c.getIsPyme());
+					customer.setTributaryIdentifier(c.getTributaryIdentifier());
 					customer.setPersonalIdentifier(c.getPersonalIdentifier());
 					customer.setCreateAt(c.getCreateAt());
-					return customerRepository.save(customer);
-				}).onErrorResume(_ex -> {
-					log.error(_ex.getMessage());
-					return Mono.empty();
-				});
-			}
-
-		}
+					return customer;
+				}).flatMap(c-> customerRepository.save(customer))
+				.doOnError(_ex->log.error(_ex.getMessage()))
+				.onErrorResume(_ex -> Mono.empty());
 	}
 
 	@Override

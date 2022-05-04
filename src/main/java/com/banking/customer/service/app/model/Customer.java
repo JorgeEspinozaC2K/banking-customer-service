@@ -1,6 +1,6 @@
 package com.banking.customer.service.app.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
@@ -40,9 +40,13 @@ public class Customer {
 	@NotEmpty
 	private String personalIdentifier;
 	
-	private String tributaryIdentifier;
+	private Boolean isVip = false;
 	
 	private Boolean isTributary = false;
+	
+	private String tributaryIdentifier;
+	
+	private Boolean isPyme = false;
 	
 	//Email of customer
 	//Correo electrónico del cliente
@@ -51,14 +55,14 @@ public class Customer {
 	private String email;
 	
 	@JsonFormat(pattern = "yyyy-MM-dd")
-	private Date birthDate;
+	private LocalDate birthDate;
 	
 	//Date of creation of this customer
 	@JsonFormat(pattern = "yyyy-MM-dd")
-	private Date createAt;
+	private LocalDate createAt = LocalDate.now();
 	
 	//Date of update of this customer
 	@JsonFormat(pattern = "yyyy-MM-dd")
-	private Date updateAt;
+	private LocalDate updateAt;
 	
 }
