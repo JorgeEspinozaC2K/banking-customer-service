@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.banking.customer.service.app.entity.Report;
 import com.banking.customer.service.app.model.Customer;
 import com.banking.customer.service.app.service.CustomerService;
 
@@ -31,10 +32,19 @@ public class CustomerController {
 	public Mono<Customer> findById(@PathVariable String id){
 		return customerService.findById(id);
 	}
+	@GetMapping("/report/{id}")
+	public Mono<Report> reportOfCustomer(@PathVariable String id){
+		return customerService.customerReport(id);
+	}
 	
 	@GetMapping("/pid/{pid}")
-	public Mono<Customer> findBypersonalIdentifier(@PathVariable Integer pid){
+	public Mono<Customer> findBypersonalIdentifier(@PathVariable String pid){
 		return customerService.findByPersonalIdentifier(pid);
+	}
+	
+	@GetMapping("/trib/{tid}")
+	public Mono<Customer> findByTributaryIdentifier(@PathVariable String tid){
+		return customerService.findByTributaryIdentifier(tid);
 	}
 	
 	@GetMapping("/ipid/{ipid}")

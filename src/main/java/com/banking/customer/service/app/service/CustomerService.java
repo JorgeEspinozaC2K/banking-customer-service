@@ -1,5 +1,6 @@
 package com.banking.customer.service.app.service;
 
+import com.banking.customer.service.app.entity.Report;
 import com.banking.customer.service.app.model.Customer;
 
 import reactor.core.publisher.Flux;
@@ -17,7 +18,8 @@ public interface CustomerService {
 	//Todos los métodos que devuelven un tipo de dato mono conteniendo el mismo tipo de dato dominante
 	
 	public Mono<Customer> findById(String id);
-	public Mono<Customer> findByPersonalIdentifier(Integer personalIdentifier);
+	public Mono<Customer> findByPersonalIdentifier(String personalIdentifier);
+	public Mono<Customer> findByTributaryIdentifier(String tributaryIdentifier);
 	public Mono<Customer> findByIdOrPersonalIdentifier(String id);
 	public Mono<Customer> save(Customer customer);
 	
@@ -26,4 +28,6 @@ public interface CustomerService {
 	//Todos los métodos que devuelven mono con un contenido diferente al de la clase dominante.
 	
 	public Mono<Void> delete(Customer customer);
+	
+	public Mono<Report> customerReport(String id);
 }

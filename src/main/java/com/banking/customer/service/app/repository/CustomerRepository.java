@@ -26,7 +26,9 @@ public interface CustomerRepository extends ReactiveMongoRepository<Customer, St
 	 * @param personalIdentifier Integer
 	 * @return Mono type Customer
 	 * */
-	public Mono<Customer> findByPersonalIdentifier(Integer personalIdentifier);
+	public Mono<Customer> findByPersonalIdentifier(String personalIdentifier);
 	
-	public Mono<Customer> findByIdOrPersonalIdentifier(String id,Integer personalIdentifier);
+	public Mono<Customer> findByTributaryIdentifier(String tributaryIdentifier);
+	
+	public Mono<Customer> findByIdOrPersonalIdentifier(String id,String personalIdentifier);
 }
