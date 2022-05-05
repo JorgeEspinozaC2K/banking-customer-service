@@ -69,15 +69,6 @@ public class CustomerServiceImp implements CustomerService {
 		
 		if (customer.getId() == null) {
 			
-				if (customer.getIsTributary()) {
-					customer.setIsPyme(customer.getIsVip() ? false : customer.getIsPyme());
-					customer.setPersonalIdentifier(null);
-				}
-
-				customer.setTributaryIdentifier(!customer.getIsTributary() ? null : customer.getTributaryIdentifier());
-
-				customer.setIsVip(customer.getIsPyme() ? false : customer.getIsVip());
-			
 				return customerRepository.findByPersonalIdentifier(customer.getPersonalIdentifier())
 						.switchIfEmpty(customerRepository.findByTributaryIdentifier(customer.getTributaryIdentifier()))
 						.defaultIfEmpty(new Customer())
@@ -90,7 +81,6 @@ public class CustomerServiceImp implements CustomerService {
 				.switchIfEmpty(Mono.error(new InterruptedException("404 Customer Not Found, can't update ID:"
 								+ customer.getPersonalIdentifier().toString())))
 				.map(c -> {
-					customer.setIsPyme(c.getIsPyme());
 					customer.setTributaryIdentifier(c.getTributaryIdentifier());
 					customer.setPersonalIdentifier(c.getPersonalIdentifier());
 					customer.setCreateAt(c.getCreateAt());

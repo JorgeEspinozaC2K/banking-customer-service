@@ -40,13 +40,9 @@ public class Customer {
 	@NotEmpty
 	private String personalIdentifier;
 	
-	private Boolean isVip = false;
-	
 	private Boolean isTributary = false;
 	
 	private String tributaryIdentifier;
-	
-	private Boolean isPyme = false;
 	
 	//Email of customer
 	//Correo electrónico del cliente
