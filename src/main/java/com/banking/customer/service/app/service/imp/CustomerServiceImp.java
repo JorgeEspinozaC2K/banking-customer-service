@@ -2,7 +2,6 @@ package com.banking.customer.service.app.service.imp;
 
 import java.time.LocalDate;
 import java.time.Period;
-import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -68,7 +67,6 @@ public class CustomerServiceImp implements CustomerService {
 		}
 		
 		if (customer.getId() == null) {
-			
 				return customerRepository.findByPersonalIdentifier(customer.getPersonalIdentifier())
 						.switchIfEmpty(customerRepository.findByTributaryIdentifier(customer.getTributaryIdentifier()))
 						.defaultIfEmpty(new Customer())
@@ -118,22 +116,33 @@ public class CustomerServiceImp implements CustomerService {
 
 	@Override
 	public Mono<Report> customerReport(String id) {
-		Customer lCus = customerRepository.findById(id)
+		return customerRepository.findById(id)
 				.defaultIfEmpty(new Customer())
-				.block();
-		
-		List<Account> lAcc = customerWebClient.findCustomerAccounts(id)
-				.defaultIfEmpty(new Account())
-				.collectList().block();
-		List<Credit> lCre = customerWebClient.findCustomerCredits(id)
-				.defaultIfEmpty(new Credit())
-				.collectList().block();
-		List<Card> lCar = customerWebClient.findCustomerCards(id)
-				.defaultIfEmpty(new Card())
-				.collectList().block();
-		
-		
-		return Mono.just(new Report(lCus,new Products(lAcc,lCre,lCar)));
+				.flatMap(customer->{
+					return customerWebClient.findCustomerAccounts(id)
+							.defaultIfEmpty(new Account())
+							.collectList()
+							.flatMap(accounts->{
+								return customerWebClient.findCustomerCredits(id)
+										.defaultIfEmpty(new Credit())
+										.collectList()
+										.flatMap(credits->{
+											return customerWebClient.findCustomerCards(id)
+											.defaultIfEmpty(new Card())
+											.collectList()
+											.flatMap(cards->{
+												Products prod = new Products();
+												Report rep = new Report();
+												prod.setAccounts(accounts);
+												prod.setCredits(credits);
+												prod.setCards(cards);
+												rep.setCustomer(customer);
+												rep.setProducts(prod);
+												return Mono.just(rep);
+											});
+										});
+							});
+				});
 	}
 
 	@Override
