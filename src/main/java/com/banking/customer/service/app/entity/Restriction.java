@@ -2,10 +2,16 @@ package com.banking.customer.service.app.entity;
 
 import java.util.Date;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
+@Builder
 public class Restriction {
 
 	private String id;
@@ -26,7 +32,7 @@ public class Restriction {
 	
 	private Boolean haveExpirationDate;
 	
-	private Date expirationDay = null;
+	private Date expirationDay;
 	
 	private Date createAt;
 }

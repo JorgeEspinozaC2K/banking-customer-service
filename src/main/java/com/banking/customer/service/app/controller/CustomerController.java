@@ -49,7 +49,7 @@ public class CustomerController {
 	
 	@GetMapping("/ipid/{ipid}")
 	public Mono<Customer> findByIdOrpersonalIdentifier(@PathVariable String ipid){
-		return customerService.findByIdOrPersonalIdentifier(ipid);
+		return customerService.findByIdentifiers(ipid);
 	}
 	
 	@PostMapping("/new")

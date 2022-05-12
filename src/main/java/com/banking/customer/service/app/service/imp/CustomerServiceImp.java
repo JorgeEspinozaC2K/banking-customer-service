@@ -6,6 +6,7 @@ import java.time.Period;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 import com.banking.customer.service.app.entity.Account;
@@ -29,7 +30,8 @@ public class CustomerServiceImp implements CustomerService {
 	@Autowired
 	private CustomerRepository customerRepository;
 	
-	private CustomerWebClient customerWebClient = new CustomerWebClient();
+	@Autowired
+	private CustomerWebClient customerWebClient;
 
 	@Override
 	public Flux<Customer> findAll() {
@@ -62,16 +64,30 @@ public class CustomerServiceImp implements CustomerService {
 
 		Integer edad = Period.between(customer.getBirthDate(), LocalDate.now()).getYears();
 		
-		if (edad < 18) {
-			return Mono.error(new InterruptedException("The client cant be a minor"));
-		}
 		
 		if (customer.getId() == null) {
+				
+			if (customer.getIsTributary()) {
+				customer.setPersonalIdentifier(null);
+				if (customer.getTributaryIdentifier() == null) {
+					return Mono.error(new InterruptedException("Tributary identifier cannot be empty if is tributary"));
+				}
+
+			}else {
+				customer.setTributaryIdentifier(null);
+			}
+				
 				return customerRepository.findByPersonalIdentifier(customer.getPersonalIdentifier())
-						.switchIfEmpty(customerRepository.findByTributaryIdentifier(customer.getTributaryIdentifier()))
 						.defaultIfEmpty(new Customer())
-						.flatMap(c -> c.getId() != null ? Mono.error(new InterruptedException("Customer already exist"))
-								:customerRepository.save(customer))
+						.flatMap(c ->{
+							if (edad < 18) {
+								return Mono.error(new InterruptedException("The client cant be a minor"));
+							}
+							if(c.getId() != null) {
+								return Mono.error(new InterruptedException("Customer already exist"));
+							}
+							return customerRepository.save(customer);
+						})
 						.doOnError(_ex->log.error(_ex.getMessage()))
 						.onErrorResume(_ex -> Mono.empty());
 		}
@@ -102,9 +118,10 @@ public class CustomerServiceImp implements CustomerService {
 	}
 
 	@Override
-	public Mono<Customer> findByIdOrPersonalIdentifier(String id) {
+	public Mono<Customer> findByIdentifiers(String id) {
 		String pid = id;
-		return customerRepository.findByIdOrPersonalIdentifier(id, pid).defaultIfEmpty(new Customer())
+		return customerRepository.findByPersonalIdentifierOrTributaryIdentifier(id, pid)
+				.defaultIfEmpty(new Customer())
 				.flatMap(c -> c.getId() == null
 						? Mono.error(new InterruptedException("404 Inexisting Customer WITH PID :" + pid.toString()))
 						: Mono.just(c))
@@ -116,7 +133,7 @@ public class CustomerServiceImp implements CustomerService {
 
 	@Override
 	public Mono<Report> customerReport(String id) {
-		return customerRepository.findById(id)
+		return findByIdentifiers(id)
 				.defaultIfEmpty(new Customer())
 				.flatMap(customer->{
 					return customerWebClient.findCustomerAccounts(id)

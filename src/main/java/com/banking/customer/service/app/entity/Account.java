@@ -5,11 +5,15 @@ import java.util.List;
 
 import com.banking.customer.service.app.model.Customer;
 
-
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
+@Builder
 public class Account {
 	
 	private String id;
@@ -21,7 +25,7 @@ public class Account {
 	
 	private Integer productType;
 	private Restriction restrictions;
-	private Boolean offer = false;
+	private Boolean offer;
 
 	private Integer monthMoves;
  

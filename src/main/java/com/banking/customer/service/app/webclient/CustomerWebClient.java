@@ -1,36 +1,57 @@
 package com.banking.customer.service.app.webclient;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.circuitbreaker.ReactiveCircuitBreaker;
+import org.springframework.cloud.client.circuitbreaker.ReactiveCircuitBreakerFactory;
+import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
-import org.springframework.web.reactive.function.client.WebClient.Builder;
 
 import com.banking.customer.service.app.entity.Account;
 import com.banking.customer.service.app.entity.Card;
 import com.banking.customer.service.app.entity.Credit;
-
 import reactor.core.publisher.Flux;
 
+@Service
 public class CustomerWebClient {
-private Builder customerWebClient = WebClient.builder();
 	
+	@SuppressWarnings("rawtypes")
+	@Autowired
+	private ReactiveCircuitBreakerFactory reactiveCircuitBreakerFactory;
+
 	public Flux<Account> findCustomerAccounts(String id){
-		return customerWebClient.build()
+		return WebClient
+				.create("http://localhost:8080")
 				.get()
-				.uri("http://localhost:8080/account/customer/{id}",id)
+				.uri("/account/customer/{id}",id)
 				.retrieve()
-				.bodyToFlux(Account.class);
+				.bodyToFlux(Account.class)
+                .transformDeferred(it -> {
+                    ReactiveCircuitBreaker rcb = reactiveCircuitBreakerFactory.create("accountCB");
+                    return rcb.run(it, throwable -> Flux.empty());
+                });
 	}
 	public Flux<Credit> findCustomerCredits(String id){
-		return customerWebClient.build()
+		return WebClient
+				.create("http://localhost:8080")
 				.get()
-				.uri("http://localhost:8080/credit/customer/{id}",id)
+				.uri("/credit/customer/{id}",id)
 				.retrieve()
-				.bodyToFlux(Credit.class);
+				.bodyToFlux(Credit.class)
+				.transformDeferred(it -> {
+                    ReactiveCircuitBreaker rcb = reactiveCircuitBreakerFactory.create("creditCB");
+                    return rcb.run(it, throwable -> Flux.just(Credit.builder().build()));
+                });
 	}
 	public Flux<Card> findCustomerCards(String id){
-		return customerWebClient.build()
+		return WebClient
+				.create("http://localhost:8080")
 				.get()
-				.uri("http://localhost:8080/card/customer/{id}",id)
+				.uri("/card/customer/{id}",id)
 				.retrieve()
-				.bodyToFlux(Card.class);
+				.bodyToFlux(Card.class)
+				.transformDeferred(it -> {
+                    ReactiveCircuitBreaker rcb = reactiveCircuitBreakerFactory.create("cardCB");
+                    return rcb.run(it, throwable -> Flux.just(Card.builder().build()));
+                });
 	}
 }

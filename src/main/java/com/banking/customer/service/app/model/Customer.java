@@ -37,12 +37,11 @@ public class Customer {
 	
 	//Customer's personal identification number
 	//Identificador personal del cliente
-	@NotEmpty
 	private String personalIdentifier;
 	
 	private Boolean isTributary = false;
 	
-	private String tributaryIdentifier;
+	private String tributaryIdentifier = null;
 	
 	//Email of customer
 	//Correo electrónico del cliente

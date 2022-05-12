@@ -30,5 +30,5 @@ public interface CustomerRepository extends ReactiveMongoRepository<Customer, St
 	
 	public Mono<Customer> findByTributaryIdentifier(String tributaryIdentifier);
 	
-	public Mono<Customer> findByIdOrPersonalIdentifier(String id,String personalIdentifier);
+	public Mono<Customer> findByPersonalIdentifierOrTributaryIdentifier(String personalIdentifier,String tributaryIdentifier);
 }

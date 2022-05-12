@@ -20,7 +20,7 @@ public interface CustomerService {
 	public Mono<Customer> findById(String id);
 	public Mono<Customer> findByPersonalIdentifier(String personalIdentifier);
 	public Mono<Customer> findByTributaryIdentifier(String tributaryIdentifier);
-	public Mono<Customer> findByIdOrPersonalIdentifier(String id);
+	public Mono<Customer> findByIdentifiers(String id);
 	public Mono<Customer> save(Customer customer);
 	
 	
